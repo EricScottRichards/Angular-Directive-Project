@@ -8,13 +8,15 @@ app.directive('dirDisplay', function(){
 			// var test;
 			// var check;
 			console.log(scope)
-			console.log(element)
-			console.log(attrs)
+			// console.log(element)
+			// console.log(attrs)
 			element.on('click', function(){
   			scope.showToggle = !scope.showToggle;
   			// console.log($scope.showToggle);
   			scope.$apply();
 			})
+			console.log(scope.users)
+			console.log(scope)
 		}
 	}
 })

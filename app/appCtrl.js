@@ -34,6 +34,8 @@ app.controller('appCtrl', function($scope){
 	 }
 	];
 
+	$scope.tester = $scope.users[0];
+ 
 
 
 })

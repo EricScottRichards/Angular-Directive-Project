@@ -3,10 +3,10 @@ app.service('weatherService', function($http, $q){
 
 	this.getWeather = function(city){
 		var dfd = $q.defer();
-		// console.log(city)
+		console.log(city)
 		$http({
 			method: 'GET',
-			url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city,
+			url: 'http://api.openweathermap.org/data/2.5/weather?q=' + city
 		})
 		.then(function(data){
 			console.log(data.data)

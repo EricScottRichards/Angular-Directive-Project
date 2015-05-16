@@ -2,9 +2,13 @@ var app = angular.module('directivePractice');
 app.directive('dirDisplay', function(){
 	return {
 		templateUrl: 'app/directives/directiveTmpl.html',
+		scope: {
+			setUser: '&',
+			user: '='
+		},
 		// restrict: '',
 		link: function(scope, element, attrs){
-			scope.showToggle = true;
+			scope.showToggle = false;
 			// var test;
 			// var check;
 			// console.log(element)
@@ -13,6 +17,7 @@ app.directive('dirDisplay', function(){
 			element.on('click', function(){
   			scope.showToggle = !scope.showToggle;
   			// console.log($scope.showToggle);
+  			scope.setUser({user: scope.user});
   			scope.$apply();
 			})
 			// console.log(scope)

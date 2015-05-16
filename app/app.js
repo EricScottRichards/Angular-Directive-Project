@@ -4,7 +4,10 @@ app.config(function($routeProvider){
 	$routeProvider
 		.when('/home', {
 			templateUrl: 'app/appTmpl.html',
-			controller: 'appCtrl'
+			controller: 'appCtrl',
+			resolve: function($scope, weatherService){
+				return weatherService.getWeather(city)
+			}
 		})
 		.otherwise({
 			redirectTo: '/home'
